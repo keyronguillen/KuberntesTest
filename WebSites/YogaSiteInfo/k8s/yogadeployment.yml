@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yoga-deployment
+  namespace: yoga-ns
+  labels:
+    app: yoga-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: yoga-frontend
+  template:
+    metadata:
+      labels:
+        app: yoga-frontend
+    spec:
+        containers:
+        - name: yoga-site
+          image: yogasite
+          imagePullPolicy: Never
+          ports:
+          - containerPort: 8082
+  
