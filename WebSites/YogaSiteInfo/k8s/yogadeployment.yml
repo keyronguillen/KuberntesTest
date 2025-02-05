@@ -15,10 +15,24 @@ spec:
       labels:
         app: yoga-frontend
     spec:
-        containers:
-        - name: yoga-site
-          image: yogasite
-          imagePullPolicy: Never
-          ports:
-          - containerPort: 8082
-  
+      containers:
+      - name: yoga-frontend
+        image: yogasite
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 4200
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: yoga-frontend-service
+  namespace: yoga-ns
+spec:
+  selector:
+    app: yoga-frontend
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8085
+      targetPort: 4200
+      nodePort: 30005
