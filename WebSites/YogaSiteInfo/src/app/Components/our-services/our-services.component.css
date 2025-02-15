@@ -52,8 +52,7 @@
 }
 
 .boxes img {
-    width: 150px;
-    mix-blend-mode:darken;  
+    width: 100px;
 }
 
 .boxes:hover {

@@ -13,13 +13,26 @@ import { RouterLink } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
 
-  navbarScrool(){
-    window.addEventListener('scroll', function(){
+  navbarScroll() {
+    window.addEventListener('scroll', function () {
       let navbar = this.document.querySelector('.navbar');
-      if(this.window.scrollY > 20){
+      if (this.window.scrollY > 20) {
         navbar?.classList.add('scrolled')
-      }else{
+      } else {
         navbar?.classList.remove('scrolled')
+      }
+    })
+  }
+
+
+  navbarHide() {
+    window.addEventListener('scroll', function () {
+      let hidde = this.document.querySelector('.navbar')
+      let show = this.document.querySelector('.navbar')
+      if (this.window.scrollY > 20) {
+        hidde?.classList.add('hidde')
+      } else {
+        hidde?.classList.remove('hidde')
       }
     })
   }
@@ -41,7 +54,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuToggle()
-    this.navbarScrool()
+    this.navbarScroll()
+    this.navbarHide()
   }
 
 }

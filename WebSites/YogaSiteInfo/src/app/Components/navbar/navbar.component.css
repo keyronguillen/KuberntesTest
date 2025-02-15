@@ -1,4 +1,4 @@
-.logo{
+.logo {
     font-size: 2em;
     font-weight: 600;
     flex: 1;
@@ -6,11 +6,44 @@
     display: flex;
     align-items: center;
 }
-.logo img{
+
+.logo img {
     width: 70px;
     margin-right: 1%;
 }
-.navbar{
+
+/* logo li*/
+
+.logo li {
+    list-style: none;
+}
+
+.logo li a {
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.logo li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #64009E;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.logo li:hover::after {
+    width: 100%;
+}
+
+/* Logo li*/
+
+.navbar {
     width: 100%;
     margin: auto;
     padding: 2em;
@@ -20,27 +53,42 @@
     z-index: 1;
     top: 0;
     position: fixed;
+
 }
 
-.navbar.scrolled{
+.navbar.hidde {
+    top: -150px;
+    transition: 0.5s;
+}
+
+.navbar.show {
+    top: 150px;
+    transition: 0.5s;
+}
+
+/* .navbar.scrolled{
     background-color: #a7a08b;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-}
+    transition: 0.5s;
+} */
 
-.nav_items{
+.nav_items {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.item{
+
+.item {
     display: flex;
     justify-content: center;
 }
-.nav_items li{
+
+.nav_items li {
     list-style: none;
     padding: 1em;
 }
-.nav_items li a{
+
+.nav_items li a {
     text-decoration: none;
     transition: 0.3s;
     font-size: 16px;
@@ -48,7 +96,8 @@
     color: #000;
     letter-spacing: 1px;
 }
-.nav_items li::after{
+
+.nav_items li::after {
     content: '';
     width: 0;
     height: 2px;
@@ -57,13 +106,16 @@
     margin: auto;
     transition: 0.5s;
 }
-.nav_items li:hover::after{
+
+.nav_items li:hover::after {
     width: 100%;
 }
-.nav_btn{
+
+.nav_btn {
     flex: 1;
 }
-.btn{
+
+.btn {
     padding: 12px 15px;
     font-size: 18px;
     letter-spacing: 2px;
@@ -74,19 +126,23 @@
     color: #fff;
     transition: all 0.5s ease-out;
 }
-.btn1:hover{
+
+.btn1:hover {
     background-color: #64009e;
     border: 2px solid #fff;
 }
-.btn2{
+
+.btn2 {
     background-color: #64009E;
 }
-.btn2:hover{
+
+.btn2:hover {
     background-color: transparent;
     color: #473829;
     border: 2px solid #473829;
 }
-.nav_menu{
+
+.nav_menu {
     display: none;
 }
 
@@ -193,6 +249,14 @@
 @media only screen and (max-width:580px) {
     .main {
         padding: 9em 0 4em 1em;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .items {
+        margin-top: 50px;
     }
 
     .main_btn .btn {
